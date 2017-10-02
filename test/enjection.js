@@ -1,6 +1,6 @@
 
 const assert = require('assert');
-const { inject, register, reset, resolve } = require('../');
+const { inject, injectAll, register, reset, resolve } = require('../');
 
 describe('#inject', ()=> {
 	afterEach(()=> {
@@ -26,6 +26,36 @@ describe('#inject', ()=> {
 			module,
 			resolve('module'),
 			'Incorrect standard module resolved.'
+		);
+	});
+});
+
+describe('#injectAll', ()=> {
+	afterEach(()=> {
+		reset();
+	});
+
+	it('should inject multiple standard modules', ()=> {
+		const deps = {
+			foo: 5,
+			bar: 10,
+			baz: false
+		};
+		injectAll( deps );
+		assert.equal(
+			resolve('foo'),
+			deps.foo,
+			'InjectAll dependency resolved incorrectly.'
+		);
+		assert.equal(
+			resolve('bar'),
+			deps.bar,
+			'InjectAll dependency resolved incorrectly.'
+		);
+		assert.equal(
+			resolve('baz'),
+			deps.baz,
+			'InjectAll dependency resolved incorrectly.'
 		);
 	});
 });
