@@ -1,0 +1,14 @@
+{
+	"name": "enjection",
+	"version": "0.1.0",
+	"description": "Simple Dependency Injection",
+	"main": "index.js",
+	"scripts": {
+		"test": "exit 1"
+	},
+	"author": "Tyler Williams <tyler.williams.it@gmail.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"express": "^4.16.1"
+	}
+}
