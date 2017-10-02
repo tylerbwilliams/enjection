@@ -2,12 +2,22 @@
 	"name": "enjection",
 	"version": "0.1.0",
 	"description": "Simple Dependency Injection",
+	"keywords": ["dependency injection", "di"],
 	"main": "index.js",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tylerbwilliams/enjection.git"
+	},
+	"bugs": {
+		"url": "https://github.com/tylerbwilliams/enjection/issues"
+	},
+	"engines": {
+		"node": ">=6.0.0"
+	},
 	"scripts": {
 		"test": "exit 1"
 	},
-	"author": "Tyler Williams <tyler.williams.it@gmail.com>",
-	"license": "ISC",
 	"devDependencies": {
 		"express": "^4.16.1"
 	}
