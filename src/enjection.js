@@ -23,16 +23,34 @@ const proxy = new Proxy( packages, {
 });
 
 const inject = exports.inject = ( name, pkg )=> {
+	assert.ok( typeof name === 'string' && name !== '',
+		'Enjection#inject: name must be a non-empty string value.'
+	);
+	assert.ok( typeof pkg !== undefined,
+		'Enjection#inject: package must NOT be undefined.'
+	);
 	packages[name] = pkg;
 };
 
 const injectAll = exports.injectAll = ( pkgs )=> {
+	assert.ok( typeof pkgs === 'object' && pkgs !== null,
+		'Enjection#injectAll: packages must be a non-null object.'
+	);
 	Object.keys( pkgs ).forEach( name => {
+		assert.ok( typeof pkgs[name] !== undefined,
+			'Enjection#injectAll: package must NOT be undefined.'
+		);
 		inject( name, pkgs[name] );
 	});
 };
 
 const register = exports.register = ( name, factory )=> {
+	assert.ok( typeof name === 'string' && name !== '',
+		'Enjection#register: name must be a non-empty string value.'
+	);
+	assert.ok( typeof factory === 'function',
+		'Enjection#register: module factory must be a function.'
+	);
 	factories[name] = factory;
 };
 
@@ -44,5 +62,8 @@ const reset = exports.reset = ()=> {
 };
 
 const resolve = exports.resolve = ( name )=> {
+	assert.ok( typeof name === 'string' && name !== '',
+		'Enjection#resolve: name must be a non-empty string value.'
+	);
 	return proxy[name];
 };
