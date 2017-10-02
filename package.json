@@ -2,7 +2,10 @@
 	"name": "enjection",
 	"version": "0.1.0",
 	"description": "Simple Dependency Injection",
-	"keywords": ["dependency injection", "di"],
+	"keywords": [
+		"dependency injection",
+		"di"
+	],
 	"main": "index.js",
 	"license": "ISC",
 	"repository": {
@@ -16,9 +19,10 @@
 		"node": ">=6.0.0"
 	},
 	"scripts": {
-		"test": "exit 1"
+		"test": "mocha --reporter spec"
 	},
 	"devDependencies": {
-		"express": "^4.16.1"
+		"express": "4.16.1",
+		"mocha": "3.5.3"
 	}
 }
