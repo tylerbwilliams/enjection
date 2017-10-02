@@ -54,3 +54,25 @@ module.exports = ({ logger })=> (text)=> {
     };
 };
 ```
+
+## Full API
+
+```
+inject(String name, Any module)
+```
+
+```
+injectAll(Object modules)
+```
+
+```
+register(String name, Func DIModule)
+```
+
+```
+resolve(String name)
+```
+
+```
+reset()
+```
